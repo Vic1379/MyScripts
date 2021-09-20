@@ -6,7 +6,6 @@ class Perceptron:
         self.l1, self.l2 = 0, 0
     def layer_one(self, x): return x[0]*self.w1[0]+x[1]*self.w1[1]+x[2]*self.w1[2]+self.b1
     def layer_two(self, x): return 1/(1+math.exp(-x))
-    #def dl_two(self, x): return 1/(math.exp(x)+2+math.exp(-x))
     def dl_two(self): return self.l2*(1-self.l2)
     def predict(self, x):
         self.l1 = self.layer_one(x)
@@ -17,7 +16,7 @@ class Perceptron:
             r = self.predict(x[i])
             if r > 0.5: res = 1
             else: res = 0
-            if res != y:
+            if res != y[i]:
                 de_p = 2*(r-y[i])
                 dp_1 = self.dl_two()
                 d1_w = x[i]
