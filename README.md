@@ -1,2 +1,2 @@
 # My Programms
-Just a place for a random small programms
+Just a place for my random small programms and scripts...
